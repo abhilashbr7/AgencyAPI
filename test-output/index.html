@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-IDEAL" class="navigator-link">
+              <span class="suite-name border-failed">IDEAL</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-IDEAL" class="navigator-link ">
+                    <span>D:\CygnusAI\Automation_Ideal_AgencyAPI\DXAPI\AgencyAPI.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-IDEAL" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-IDEAL" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-IDEAL" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-IDEAL" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-IDEAL" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-IDEAL" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">28 methods, 2 failed,   26 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-IDEAL" class="hide-methods failed suite-IDEAL"> (hide)</a> <!-- hide-methods failed suite-IDEAL -->
+                      <a href="#" panel-name="suite-IDEAL" class="show-methods failed suite-IDEAL"> (show)</a> <!-- show-methods failed suite-IDEAL -->
+                    </span>
+                    <div class="method-list-content failed suite-IDEAL">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_complianceDocuments_ind">Hacienda_complianceDocuments_ind</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="PostAPITest_Justicia_CriminalRecord_CheckInquiry">PostAPITest_Justicia_CriminalRecord_CheckInquiry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-IDEAL -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-IDEAL" class="hide-methods passed suite-IDEAL"> (hide)</a> <!-- hide-methods passed suite-IDEAL -->
+                      <a href="#" panel-name="suite-IDEAL" class="show-methods passed suite-IDEAL"> (show)</a> <!-- show-methods passed suite-IDEAL -->
+                    </span>
+                    <div class="method-list-content passed suite-IDEAL">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Assume_Individuo_Certificate">Assume_Individuo_Certificate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Assume_Patroons_Certificate">Assume_Patroons_Certificate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Assume_get_access_token">Assume_get_access_token</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CFSE_Test_get_access_token">CFSE_Test_get_access_token</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CFSE_get_certificacionDeDeauda">CFSE_get_certificacionDeDeauda</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CFSE_get_certificacionDeVegencia">CFSE_get_certificacionDeVegencia</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CFSE_get_fondoPing">CFSE_get_fondoPing</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CFSE_get_informacionDeDeauda">CFSE_get_informacionDeDeauda</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CRIM360_Certification">CRIM360_Certification</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CRIM360_Crimcompliance">CRIM360_Crimcompliance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="CRIM360_FileContent">CRIM360_FileContent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Crim360_Authenticate">Crim360_Authenticate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="DTOP_token">DTOP_token</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Estado_Certificado">Estado_Certificado</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Estado_Compliance">Estado_Compliance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Estado_Ping">Estado_Ping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_Corporate_complianceDocuments">Hacienda_Corporate_complianceDocuments</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_authorize_individual">Hacienda_authorize_individual</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_corporate_authorize">Hacienda_corporate_authorize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_corporate_compliance">Hacienda_corporate_compliance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_corporate_ping">Hacienda_corporate_ping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="Hacienda_individual_ping">Hacienda_individual_ping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="PostAPITest_Justicia_Validate">PostAPITest_Justicia_Validate</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="PostAPITest_Retrieve">PostAPITest_Retrieve</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="PostAPITest_cap_request">PostAPITest_cap_request</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-IDEAL" title="com.qa.tests.PostAPItest" class="method navigator-link" hash-for-method="get_DTOPGetPhoto">get_DTOPGetPhoto</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-IDEAL -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-IDEAL" class="panel IDEAL">
+          <div class="suite-IDEAL-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.qa.tests.PostAPItest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_complianceDocuments_ind">
+                  </a> <!-- Hacienda_complianceDocuments_ind -->
+                  <span class="method-name">Hacienda_complianceDocuments_ind</span>
+                  <div class="stack-trace">java.lang.AssertionError: status code is not 200 expected [200] but found [400]
+	at com.qa.tests.PostAPItest.Hacienda_complianceDocuments_ind(PostAPItest.java:983)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PostAPITest_Justicia_CriminalRecord_CheckInquiry">
+                  </a> <!-- PostAPITest_Justicia_CriminalRecord_CheckInquiry -->
+                  <span class="method-name">PostAPITest_Justicia_CriminalRecord_CheckInquiry</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Illegal character in path at index 48: https://suri.cjis.pr.gov/identity/criminal/check	
+	at java.base/java.net.URI.create(URI.java:906)
+	at org.apache.http.client.methods.HttpGet.&lt;init&gt;(HttpGet.java:66)
+	at com.qa.client.RestClient.get(RestClient.java:43)
+	at com.qa.tests.PostAPItest.PostAPITest_Justicia_CriminalRecord_CheckInquiry(PostAPItest.java:1169)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: java.net.URISyntaxException: Illegal character in path at index 48: https://suri.cjis.pr.gov/identity/criminal/check	
+	at java.base/java.net.URI$Parser.fail(URI.java:2974)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3145)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3227)
+	at java.base/java.net.URI$Parser.parse(URI.java:3175)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:623)
+	at java.base/java.net.URI.create(URI.java:904)
+	... 31 more
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-IDEAL-class-failed -->
+          <div class="suite-IDEAL-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.qa.tests.PostAPItest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Assume_Individuo_Certificate">
+                  </a> <!-- Assume_Individuo_Certificate -->
+                  <span class="method-name">Assume_Individuo_Certificate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Assume_Patroons_Certificate">
+                  </a> <!-- Assume_Patroons_Certificate -->
+                  <span class="method-name">Assume_Patroons_Certificate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Assume_get_access_token">
+                  </a> <!-- Assume_get_access_token -->
+                  <span class="method-name">Assume_get_access_token</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CFSE_Test_get_access_token">
+                  </a> <!-- CFSE_Test_get_access_token -->
+                  <span class="method-name">CFSE_Test_get_access_token</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CFSE_get_certificacionDeDeauda">
+                  </a> <!-- CFSE_get_certificacionDeDeauda -->
+                  <span class="method-name">CFSE_get_certificacionDeDeauda</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CFSE_get_certificacionDeVegencia">
+                  </a> <!-- CFSE_get_certificacionDeVegencia -->
+                  <span class="method-name">CFSE_get_certificacionDeVegencia</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CFSE_get_fondoPing">
+                  </a> <!-- CFSE_get_fondoPing -->
+                  <span class="method-name">CFSE_get_fondoPing</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CFSE_get_informacionDeDeauda">
+                  </a> <!-- CFSE_get_informacionDeDeauda -->
+                  <span class="method-name">CFSE_get_informacionDeDeauda</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CRIM360_Certification">
+                  </a> <!-- CRIM360_Certification -->
+                  <span class="method-name">CRIM360_Certification</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CRIM360_Crimcompliance">
+                  </a> <!-- CRIM360_Crimcompliance -->
+                  <span class="method-name">CRIM360_Crimcompliance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="CRIM360_FileContent">
+                  </a> <!-- CRIM360_FileContent -->
+                  <span class="method-name">CRIM360_FileContent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Crim360_Authenticate">
+                  </a> <!-- Crim360_Authenticate -->
+                  <span class="method-name">Crim360_Authenticate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="DTOP_token">
+                  </a> <!-- DTOP_token -->
+                  <span class="method-name">DTOP_token</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Estado_Certificado">
+                  </a> <!-- Estado_Certificado -->
+                  <span class="method-name">Estado_Certificado</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Estado_Compliance">
+                  </a> <!-- Estado_Compliance -->
+                  <span class="method-name">Estado_Compliance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Estado_Ping">
+                  </a> <!-- Estado_Ping -->
+                  <span class="method-name">Estado_Ping</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_Corporate_complianceDocuments">
+                  </a> <!-- Hacienda_Corporate_complianceDocuments -->
+                  <span class="method-name">Hacienda_Corporate_complianceDocuments</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_authorize_individual">
+                  </a> <!-- Hacienda_authorize_individual -->
+                  <span class="method-name">Hacienda_authorize_individual</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_corporate_authorize">
+                  </a> <!-- Hacienda_corporate_authorize -->
+                  <span class="method-name">Hacienda_corporate_authorize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_corporate_compliance">
+                  </a> <!-- Hacienda_corporate_compliance -->
+                  <span class="method-name">Hacienda_corporate_compliance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_corporate_ping">
+                  </a> <!-- Hacienda_corporate_ping -->
+                  <span class="method-name">Hacienda_corporate_ping</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Hacienda_individual_ping">
+                  </a> <!-- Hacienda_individual_ping -->
+                  <span class="method-name">Hacienda_individual_ping</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PostAPITest_Justicia_Validate">
+                  </a> <!-- PostAPITest_Justicia_Validate -->
+                  <span class="method-name">PostAPITest_Justicia_Validate</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PostAPITest_Retrieve">
+                  </a> <!-- PostAPITest_Retrieve -->
+                  <span class="method-name">PostAPITest_Retrieve</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PostAPITest_cap_request">
+                  </a> <!-- PostAPITest_cap_request -->
+                  <span class="method-name">PostAPITest_cap_request</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="get_DTOPGetPhoto">
+                  </a> <!-- get_DTOPGetPhoto -->
+                  <span class="method-name">get_DTOPGetPhoto</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-IDEAL-class-passed -->
+        </div> <!-- panel IDEAL -->
+        <div panel-name="test-xml-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\CygnusAI\Automation_Ideal_AgencyAPI\DXAPI\AgencyAPI.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;IDEAL&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.qa.tests.PostAPItest&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;agencyapi&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.qa.tests.PostAPItest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- agencyapi --&gt;
+&lt;/suite&gt; &lt;!-- IDEAL --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for IDEAL</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">agencyapi (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for IDEAL</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for IDEAL</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_IDEAL');
+function tableData_IDEAL() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(28);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'CFSE_get_informacionDeDeauda')
+data.setCell(0, 2, 'com.qa.tests.PostAPItest')
+data.setCell(0, 3, 17127);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Estado_Certificado')
+data.setCell(1, 2, 'com.qa.tests.PostAPItest')
+data.setCell(1, 3, 12036);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Hacienda_complianceDocuments_ind')
+data.setCell(2, 2, 'com.qa.tests.PostAPItest')
+data.setCell(2, 3, 10572);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Assume_Individuo_Certificate')
+data.setCell(3, 2, 'com.qa.tests.PostAPItest')
+data.setCell(3, 3, 10449);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Assume_Patroons_Certificate')
+data.setCell(4, 2, 'com.qa.tests.PostAPItest')
+data.setCell(4, 3, 6666);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'Assume_get_access_token')
+data.setCell(5, 2, 'com.qa.tests.PostAPItest')
+data.setCell(5, 3, 4328);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'Hacienda_corporate_authorize')
+data.setCell(6, 2, 'com.qa.tests.PostAPItest')
+data.setCell(6, 3, 4038);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'CRIM360_FileContent')
+data.setCell(7, 2, 'com.qa.tests.PostAPItest')
+data.setCell(7, 3, 3395);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'get_DTOPGetPhoto')
+data.setCell(8, 2, 'com.qa.tests.PostAPItest')
+data.setCell(8, 3, 3053);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'PostAPITest_Justicia_Validate')
+data.setCell(9, 2, 'com.qa.tests.PostAPItest')
+data.setCell(9, 3, 3047);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'PostAPITest_Retrieve')
+data.setCell(10, 2, 'com.qa.tests.PostAPItest')
+data.setCell(10, 3, 2983);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'CRIM360_Certification')
+data.setCell(11, 2, 'com.qa.tests.PostAPItest')
+data.setCell(11, 3, 2880);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'PostAPITest_cap_request')
+data.setCell(12, 2, 'com.qa.tests.PostAPItest')
+data.setCell(12, 3, 2721);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'Hacienda_authorize_individual')
+data.setCell(13, 2, 'com.qa.tests.PostAPItest')
+data.setCell(13, 3, 2544);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'Hacienda_corporate_compliance')
+data.setCell(14, 2, 'com.qa.tests.PostAPItest')
+data.setCell(14, 3, 2153);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'Hacienda_corporate_ping')
+data.setCell(15, 2, 'com.qa.tests.PostAPItest')
+data.setCell(15, 3, 2087);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'CFSE_Test_get_access_token')
+data.setCell(16, 2, 'com.qa.tests.PostAPItest')
+data.setCell(16, 3, 1815);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'DTOP_token')
+data.setCell(17, 2, 'com.qa.tests.PostAPItest')
+data.setCell(17, 3, 1757);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'Crim360_Authenticate')
+data.setCell(18, 2, 'com.qa.tests.PostAPItest')
+data.setCell(18, 3, 1739);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'CFSE_get_certificacionDeDeauda')
+data.setCell(19, 2, 'com.qa.tests.PostAPItest')
+data.setCell(19, 3, 1709);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'Hacienda_individual_ping')
+data.setCell(20, 2, 'com.qa.tests.PostAPItest')
+data.setCell(20, 3, 1674);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'Hacienda_Corporate_complianceDocuments')
+data.setCell(21, 2, 'com.qa.tests.PostAPItest')
+data.setCell(21, 3, 1603);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'Estado_Compliance')
+data.setCell(22, 2, 'com.qa.tests.PostAPItest')
+data.setCell(22, 3, 1381);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'CRIM360_Crimcompliance')
+data.setCell(23, 2, 'com.qa.tests.PostAPItest')
+data.setCell(23, 3, 1380);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'CFSE_get_fondoPing')
+data.setCell(24, 2, 'com.qa.tests.PostAPItest')
+data.setCell(24, 3, 1352);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'CFSE_get_certificacionDeVegencia')
+data.setCell(25, 2, 'com.qa.tests.PostAPItest')
+data.setCell(25, 3, 1350);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'Estado_Ping')
+data.setCell(26, 2, 'com.qa.tests.PostAPItest')
+data.setCell(26, 3, 983);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'PostAPITest_Justicia_CriminalRecord_CheckInquiry')
+data.setCell(27, 2, 'com.qa.tests.PostAPItest')
+data.setCell(27, 3, 6);
+window.suiteTableData['IDEAL']= { tableData: data, tableDiv: 'times-div-IDEAL'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-IDEAL">
+              </div> <!-- times-div-IDEAL -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for IDEAL</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">3 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.qa.tests.PostAPItest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">PostAPITest_Validate</span>
+                <br/>
+                <span class="ignored-method-name">Hacienda_compliance_individual</span>
+                <br/>
+                <span class="ignored-method-name">get_GetLicense</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-IDEAL" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.qa.tests.PostAPItest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Assume_get_access_token</span>
+                <span class="method-start">17 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">4366 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Assume_Individuo_Certificate</span>
+                <span class="method-start">4370 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">14825 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Assume_Patroons_Certificate</span>
+                <span class="method-start">14827 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">21498 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CFSE_Test_get_access_token</span>
+                <span class="method-start">21500 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">23320 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CFSE_get_informacionDeDeauda</span>
+                <span class="method-start">23322 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">40454 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CFSE_get_certificacionDeDeauda</span>
+                <span class="method-start">40457 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">42173 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CFSE_get_certificacionDeVegencia</span>
+                <span class="method-start">42175 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">43530 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CFSE_get_fondoPing</span>
+                <span class="method-start">43532 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">44889 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Estado_Compliance</span>
+                <span class="method-start">44890 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">46275 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Estado_Ping</span>
+                <span class="method-start">46277 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">47264 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Estado_Certificado</span>
+                <span class="method-start">47265 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">59305 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_corporate_ping</span>
+                <span class="method-start">59306 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">61397 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_corporate_compliance</span>
+                <span class="method-start">61399 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">63558 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_corporate_authorize</span>
+                <span class="method-start">63561 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">67605 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_Corporate_complianceDocuments</span>
+                <span class="method-start">67607 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">69215 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_individual_ping</span>
+                <span class="method-start">69218 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">70896 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Hacienda_authorize_individual</span>
+                <span class="method-start">70898 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">73447 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Hacienda_complianceDocuments_ind</span>
+                <span class="method-start">73449 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">84033 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">PostAPITest_cap_request</span>
+                <span class="method-start">84034 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">86760 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">PostAPITest_Retrieve</span>
+                <span class="method-start">86762 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">89748 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">PostAPITest_Justicia_Validate</span>
+                <span class="method-start">89749 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">92801 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">PostAPITest_Justicia_CriminalRecord_CheckInquiry</span>
+                <span class="method-start">92804 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">92816 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Crim360_Authenticate</span>
+                <span class="method-start">92818 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">94561 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CRIM360_Certification</span>
+                <span class="method-start">94563 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">97448 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CRIM360_Crimcompliance</span>
+                <span class="method-start">97451 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">98835 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">CRIM360_FileContent</span>
+                <span class="method-start">98837 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">102237 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">DTOP_token</span>
+                <span class="method-start">102239 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">104005 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">get_DTOPGetPhoto</span>
+                <span class="method-start">104008 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
