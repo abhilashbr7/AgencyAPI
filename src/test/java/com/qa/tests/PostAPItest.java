@@ -700,7 +700,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 //			//1.GET status code
 		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_400, "status code is not 400");
+		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not ");
 
 //			//2.Json String
 		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
@@ -858,7 +858,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 17)
 	public void Hacienda_compliance_individual() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
 		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
@@ -881,7 +881,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 //			//1.GET status code
 		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_400, "status code is not 400");
+		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
 
 //			//2.Json String
 		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
@@ -904,7 +904,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void Hacienda_authorize_individual() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
 		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
@@ -951,7 +951,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void Hacienda_complianceDocuments_ind() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
 		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
@@ -1003,7 +1003,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void PostAPITest_cap_request() throws ClientProtocolException, IOException {
 
 		String encoding = Base64.getEncoder().encodeToString(("prgov:PrG0v!T3St").getBytes());
@@ -1068,7 +1068,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 	  return httpClient;
 	}
 	
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void PostAPITest_Retrieve() throws ClientProtocolException, IOException {
 		
 		String encoding = Base64.getEncoder().encodeToString(("prgov:PrG0v!T3St").getBytes());
@@ -1112,7 +1112,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 	}
 	
 
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void PostAPITest_Justicia_Validate() throws ClientProtocolException, IOException {
 		
 		String encoding = Base64.getEncoder().encodeToString(("prgov:PrG0v!T3St").getBytes());
@@ -1156,7 +1156,7 @@ public class PostAPItest extends TestBase implements IExecutionListener {
 	}
 	
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void PostAPITest_Justicia_CriminalRecord_CheckInquiry() throws ClientProtocolException, IOException {
 		
 		restclient = new RestClient();
