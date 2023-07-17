@@ -4,7 +4,7 @@
 <listeners>
         <listener class-name="com.qa.tests.AgencyAPI_Prod"/>
 </listeners>
-  <test thread-count="5" name="agencyapi">
+  <test thread-count="5" name="AgencyAPI_Prod">
     <classes>
       <class name="com.qa.tests.AgencyAPI_Prod"/>
      <!-- <class name="com.qa.tests.GetAPItest"/> -->

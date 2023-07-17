@@ -85,7 +85,7 @@
           <configuration>
              <suiteXmlFiles>
               <!-- TestNG suite XML files -->
-               <suiteXmlFile>AgencyAPI.xml</suiteXmlFile>
+               <suiteXmlFile>AgencyAPI_Prod.xml</suiteXmlFile>
              </suiteXmlFiles>
           </configuration>
         </plugin>

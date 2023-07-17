@@ -124,7 +124,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		crimcertificate = crimurl + crimcertificate;
 		crimcompliance = prop.getProperty("Prod_crimcompliance");
 		crimcompliance = crimurl + crimcompliance;
-		crimfilecontent = prop.getProperty("Prod_crimfilecontent");
+		crimfilecontent = prop.getProperty("crimfilecontent");
 		crimfilecontent = crimurl + crimfilecontent;
 		get_token = "https://auth.cescodigital.dtop.pr.gov/auth/realms/cescodigital/protocol/openid-connect/token";
 	}
@@ -302,7 +302,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	     
 	     
 	     MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-	     builder.addTextBody("username", "testuser");
+	     builder.addTextBody("username", "pritsuser");
 	     builder.addTextBody("password", "1qaz@wsX");
 	    // builder.addBinaryBody(
 	    //   "file", new File("test.txt"), ContentType.APPLICATION_OCTET_STREAM, "file.ext");
@@ -332,7 +332,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 	// //To get value from JSON Array
 	Fondo_Token = TestUtil.getValueByjpath(responseJson, "/token");
-	System.out.println("Token is : " + Token);
+	System.out.println("CFSE Token is : " + Fondo_Token);
 	//    
 	// //3.All Headers
 	Header[] headersArray = closeableHttpResponse.getAllHeaders();
@@ -645,7 +645,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	public void Hacienda_corporate_ping() throws ClientProtocolException, IOException {
 
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		//headermap.put("content-type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -680,7 +680,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 13)
 	public void Hacienda_corporate_compliance() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -726,7 +726,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 14)
 	public void Hacienda_corporate_authorize() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -773,7 +773,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 15)
 	public void Hacienda_Corporate_complianceDocuments() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -826,7 +826,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	public void Hacienda_individual_ping() throws ClientProtocolException, IOException {
 
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		//headermap.put("content-type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -861,7 +861,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 17)
 	public void Hacienda_compliance_individual() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -907,7 +907,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 18)
 	public void Hacienda_authorize_individual() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -954,7 +954,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	@Test(priority = 19)
 	public void Hacienda_complianceDocuments_ind() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("ideal_dev:q?3:t>5bi1J~>6~").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("Content-Type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -1160,7 +1160,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	public void PostAPITest_Justicia_CriminalRecord_CheckInquiry() throws ClientProtocolException, IOException {
 		
 		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("test:ch3ckC@d").getBytes());
+		String encoding = Base64.getEncoder().encodeToString(("ideal:$2a$10$6pBaMxRLT65N.SNDTVItP.BE8q7w0.CWq0AvAhGq5r09i3p9eRsEG").getBytes());
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		headermap.put("content-type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
@@ -1239,8 +1239,8 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("content-type", "application/json");
 		
 		String usersJsonString = "{\r\n"
-				+ "    \"Username\": \"pritstest\",\r\n"
-				+ "    \"Password\": \"9r175p@55w0rd\"\r\n"
+				+ "    \"Username\": \"prits\",\r\n"
+				+ "    \"Password\": \"cr1mw36@9120219r175\"\r\n"
 				+ "}";
 
 		
@@ -1278,7 +1278,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	}
 	
 	
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void CRIM360_Certification() throws ClientProtocolException, IOException {
 
 		restclient = new RestClient();
@@ -1288,9 +1288,9 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("Authorization", "Bearer " + Token);
 
 		String JsonPayload = "{\r\n"
-				+ " \"CertificationTypeCode\": \"1\",\r\n"
-				+ " \"RequesterIdentificationNumber\": \"454-33-3232\",\r\n"
-				+ " \"FullName\": \"Juan Del Pueblo\",\r\n"
+				+ " \"CertificationTypeCode\": \"2\",\r\n"
+				+ " \"RequesterIdentificationNumber\": \"098-30-6190\",\r\n"
+				+ " \"FullName\": \"jon doe\",\r\n"
 				+ " \"CertificationRequestPaymentTypeCode\": \"2\",\r\n"
 				+ " \"SourceCode\" : \"5\",\r\n"
 				+ " \"Quantity\": \"1\"\r\n"
@@ -1326,13 +1326,13 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 26)
+	@Test(priority = 25)
 	public void CRIM360_Crimcompliance() throws ClientProtocolException, IOException {
 
 	
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		String JsonPayload = "{\r\n"
-				+ "    \"id\": \"58897953\"\r\n"
+				+ "    \"id\": \"333224444\"\r\n"
 				+ "}";
 		
 		HttpUriRequest request = RequestBuilder.get(crimcompliance)
@@ -1423,7 +1423,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	 public void DTOP_token() throws ClientProtocolException, IOException {
 
 		 String get_tocken = "https://auth.cescodigital.dtop.pr.gov/auth/realms/cescodigital/protocol/openid-connect/token";
-
+		                      
 
 		  List<NameValuePair> formData = new ArrayList<>();
 		 //params.add(new BasicNameValuePair("grant_type", "password"));
@@ -1431,12 +1431,12 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		  //params.add(new BasicNameValuePair("password", "aldf@23901FTOPasd23"));
 		  //params.add(new BasicNameValuePair("client_id", "OGP20180821&*990899XX"));
 		  //params.add(new BasicNameValuePair("client_secret", "5&t%$xZHpr9800"));
-		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
+//		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
 		 formData.add(new BasicNameValuePair("scope", "roles"));
-		 formData.add(new BasicNameValuePair("client_id", "app1"));
-		 formData.add(new BasicNameValuePair("client_secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
-		 //formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
-		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
+		 formData.add(new BasicNameValuePair("Client_ID", "app1"));
+		 formData.add(new BasicNameValuePair("Client_Secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
+		 formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
+//		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
 		  // add to request
 		  
 		  CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -1482,7 +1482,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		   public void get_DTOPGetPhoto() throws ClientProtocolException, IOException
 		 {
 //		 Agency b1 =  new Agency();
-		 String DTOP_GetPhoto = "https://ideal.cescodigital.dtop.pr.gov/api/photo/4970687";
+		 String DTOP_GetPhoto = "https://ideal.cescodigital.dtop.pr.gov/api/photo/6045111";
 
 
 		 restclient = new RestClient();
