@@ -1321,9 +1321,9 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	
 	@Test(priority = 28)
 	 public void DTOP_token() throws ClientProtocolException, IOException {
-
+		
 		 String get_tocken = "https://auth.cescodigital.dtop.pr.gov/auth/realms/cescodigital/protocol/openid-connect/token";
-		                      
+
 
 		  List<NameValuePair> formData = new ArrayList<>();
 		 //params.add(new BasicNameValuePair("grant_type", "password"));
@@ -1331,14 +1331,15 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		  //params.add(new BasicNameValuePair("password", "aldf@23901FTOPasd23"));
 		  //params.add(new BasicNameValuePair("client_id", "OGP20180821&*990899XX"));
 		  //params.add(new BasicNameValuePair("client_secret", "5&t%$xZHpr9800"));
-//		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
-		  formData.add(new BasicNameValuePair("Grant Type", "Client Credentials"));
-		 formData.add(new BasicNameValuePair("Scope", "roles"));
-		 formData.add(new BasicNameValuePair("Client ID", "app1"));
-		 formData.add(new BasicNameValuePair("Client Secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
-		 formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
-//		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
-		  // add to request
+		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
+		 formData.add(new BasicNameValuePair("scope", "roles"));
+		 formData.add(new BasicNameValuePair("client_id", "app1"));
+		 formData.add(new BasicNameValuePair("client_secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
+		 //formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
+		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
+
+
+				  // add to request
 		  
 		  CloseableHttpClient httpclient = HttpClients.createDefault();
 		      HttpPost httppost = new HttpPost(get_tocken);  //post request
@@ -1379,11 +1380,11 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 		 }
 
-		 @Test (priority = 29)
+		 @Test (priority = 30)
 		   public void get_DTOPGetPhoto() throws ClientProtocolException, IOException
 		 {
 //		 Agency b1 =  new Agency();
-		 String DTOP_GetPhoto = "https://ideal.cescodigital.dtop.pr.gov/api/photo/6045111";
+		 String DTOP_GetPhoto = "https://ideal.cescodigital.dtop.pr.gov/api/photo/1390517";
 
 
 		 restclient = new RestClient();
@@ -1401,11 +1402,11 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 		 }
 
-		 @Test (enabled = false)
+		 @Test (priority = 29)
 		   public void get_GetLicense() throws ClientProtocolException, IOException
 		 {
 //		 Agency b1 =  new Agency();
-		 String DTOP_GetLicense = "https://ideal.cescodigital.dtop.pr.gov/api/license/4970687";
+		 String DTOP_GetLicense = "https://ideal.cescodigital.dtop.pr.gov/api/license/6045111";
 
 
 		 restclient = new RestClient();
