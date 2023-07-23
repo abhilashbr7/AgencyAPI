@@ -55,10 +55,10 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	String apiurl;
 	String url;
 	String Token,Fondo_Token, citizen_referenceId, corporate_referenceId,get_token,DTOP_tocken;
-	String api_test_token,justicia_url,caprequest,Retrieve,Validate,Justicia_CriminalRecord;
+	String api_test_token,justicia_url,caprequest,Retrieve,Validate;
 	String Patrono_Certificate,CFSE_serviceurl,api_CFSEtest_toke,InformationDDeuda,CertificateDDeuda,CertificateDVegencia,FondoPing,Compliance,EstadoPing,Certificado,api_CFSEtest_token;
-	String Individuo_Certificate,serviceurl_hacienda,ping,compliance,authorize,complianceDocuments,serviceurl_Ind_hacienda,ping_ind,compliance_ind,authorize_ind,complianceDocuments_ind;
-	String crimurl,crimauthenticate,crimcertificate,crimcompliance,crimfilecontent,FileContentId,FileContent;
+	String Individuo_Certificate,Hacienda_income,serviceurl_hacienda,ping,compliance,authorize,complianceDocuments,serviceurl_Ind_hacienda,ping_ind,compliance_ind,authorize_ind,complianceDocuments_ind;
+	String crimurl,crimauthenticate,crimcertificate,crimcompliance,crimfilecontent,FileContentId,FileContent,DTOP_License,Prod_Justicia_CriminalRecord,Justicia_CriminalRecord;
 	CloseableHttpResponse closeableHttpResponse;
 	
 
@@ -69,9 +69,14 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		serviceurl = prop.getProperty("ProdURL");
 		api_test_token = prop.getProperty("Prod_api_test_token");
 		api_test_token = serviceurl + api_test_token;
+		Hacienda_income = prop.getProperty("Prod_hacienda_income");
+		Hacienda_income = serviceurl + Hacienda_income;
+		
 		Individuo_Certificate = prop.getProperty("Prod_Individuo_Certificate");
 		Individuo_Certificate = serviceurl + Individuo_Certificate;
 		serviceurl_hacienda = prop.getProperty("Prod_HACIENDAURL");
+		Hacienda_income = prop.getProperty("Prod_hacienda_income");
+		Hacienda_income = serviceurl_hacienda + Hacienda_income;
 		ping = prop.getProperty("Prod_ping");
 		ping = serviceurl_hacienda + ping;
 		serviceurl_Ind_hacienda = prop.getProperty("Prod_hacieda_ind_url");
@@ -95,8 +100,9 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		Retrieve = justicia_url + Retrieve;
 		Validate = prop.getProperty("Prod_Validate");
 		Validate = justicia_url + Validate;
-		Justicia_CriminalRecord = prop.getProperty("Prod_Justicia_CriminalRecord");
-		//Justicia_CriminalRecord = Justicia_CriminalRecord;
+		Prod_Justicia_CriminalRecord = prop.getProperty("Prod_Justicia_CriminalRecord");
+		Justicia_CriminalRecord = Prod_Justicia_CriminalRecord;
+		DTOP_License = prop.getProperty("Prod_DTOP_License");
 		Patrono_Certificate = prop.getProperty("Prod_Patrono_Certificate");
 		Patrono_Certificate = serviceurl + Patrono_Certificate;
 		CFSE_serviceurl = prop.getProperty("Prod_URL3");
@@ -506,11 +512,10 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("Content-Type", "application/json");
 	     
 	     String jsonpayload = "{\r\n"
-	     		+ "    \"registerNumber\": 455749,\r\n"
-	     		+ "    \"corpClass\": 15,\r\n"
+	     		+ "    \"registerNumber\": 19749,\r\n"
+	     		+ "    \"corpClass\": 1,\r\n"
 	     		+ "    \"corpType\": 1,\r\n"
 	     		+ "    \"jurisdiction\": 1,\r\n"
-	     		+ "    \"IDEALId\": 1324234\r\n"
 	     		+ "}";
 	     
 	     closeableHttpResponse = restclient.post(Compliance, jsonpayload, headermap);
@@ -544,7 +549,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	}
 
 
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void Estado_Ping() throws ClientProtocolException, IOException {
 
 		restclient = new RestClient();
@@ -552,28 +557,20 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("Content-Type", "application/json");
 	     System.out.println(EstadoPing);
 	     
-	     String jsonpayload = "{\r\n"
-	      + "    registerNumber: 3992,\r\n"
-	      + "    corpClass: 7,\r\n"
-	      + "    corpType: 1,\r\n"
-	      + "    jurisdiction: 1\r\n"
-	      + "}";
-	     
-	     
-	     closeableHttpResponse = restclient.post(EstadoPing, jsonpayload, headermap);
+	     closeableHttpResponse = restclient.get(EstadoPing, headermap);
 	// //1.GET status code
 	int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 	System.out.println("Status code:" + statuscode);
 	Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
 
-	// //2.Json String
-	String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-	JSONObject responseJson = new JSONObject(responsestring);
-	System.out.println("JSON response from API---->" + responseJson);
-
-	// To get value from JSON Array
-	String responseFromJson = TestUtil.getValueByjpath(responseJson, "/status");
-	System.out.println("Response From Json is : " + responseFromJson);
+//	// //2.Json String
+//	String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
+//	JSONObject responseJson = new JSONObject(responsestring);
+//	System.out.println("JSON response from API---->" + responseJson);
+//
+//	// To get value from JSON Array
+//	String responseFromJson = TestUtil.getValueByjpath(responseJson, "/status");
+//	System.out.println("Response From Json is : " + responseFromJson);
 
 	// 3.All Headers
 	Header[] headersArray = closeableHttpResponse.getAllHeaders();
@@ -587,7 +584,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 10)
 	public void Estado_Certificado() throws ClientProtocolException, IOException {
 
 	 CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -596,11 +593,11 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	     System.out.println(Certificado);
 	     
 	     String jsonpayload = "{\r\n"
-	      + "    \"registerNumber\": 455749,\r\n"
-	      + "    \"corpClass\": 15,\r\n"
+	      + "    \"registerNumber\": 402587,\r\n"
+	      + "    \"corpClass\": 1,\r\n"
 	      + "    \"corpType\": 1,\r\n"
 	      + "    \"jurisdiction\": 1,\r\n"
-	      + "    \"IDEALId\": 1324234\r\n"
+	      + "    \"IDEALId\": 13242384894985198\r\n"
 	      + "}";
 	     
 	     
@@ -649,8 +646,29 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		HashMap<String, String> headermap = new HashMap<String, String>();
 		//headermap.put("content-type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
+		
+		         
+		  List<NameValuePair> formData = new ArrayList<>();
+		  formData.add(new BasicNameValuePair("grant_type", "password"));
+		  formData.add(new BasicNameValuePair("username", "dToplicenciaS"));
+		  formData.add(new BasicNameValuePair("password", "aldf@23901FTOPasd23"));
+		  formData.add(new BasicNameValuePair("client_id", "OGP20180821&*990899XX"));
+		  formData.add(new BasicNameValuePair("client_secret", "5&t%$xZHpr9800"));
+////		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
+//		 formData.add(new BasicNameValuePair("scope", "roles"));
+//		 formData.add(new BasicNameValuePair("Client_ID", "app1"));
+//		 formData.add(new BasicNameValuePair("Client_Secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
+//		 formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
+//		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
+		  // add to request
+		  
+ 	  CloseableHttpClient httpclient = HttpClients.createDefault();
+		      HttpPost httppost = new HttpPost(api_test_token);  //post request
+		      System.out.println(httppost);
+		  httppost.setEntity(new UrlEncodedFormEntity(formData)); //for payload
+		 CloseableHttpResponse closeableHttpResponse = httpclient.execute(httppost);
 
-		closeableHttpResponse = restclient.get(ping, headermap);
+//		closeableHttpResponse = restclient.get(api_test_token, headermap);
 
 		// 1.GET status code
 		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
@@ -677,53 +695,8 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 13)
-	public void Hacienda_corporate_compliance() throws ClientProtocolException, IOException {
-		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
-		HashMap<String, String> headermap = new HashMap<String, String>();
-		headermap.put("Content-Type", "application/json");
-		headermap.put("Authorization", "Basic " + encoding);
-		
-		String usersJsonString = "{\r\n"
-				+ "    \"idType\": \"2\",\r\n"
-				+ "    \"id\": \"660962981\",\r\n"
-				+ "    \"firstName\": \"\",\r\n"
-				+ "    \"lastName\": \"\",\r\n"
-				+ "    \"secondLastName\": \"\",\r\n"
-				+ "    \"businessName\": \"Code Dog Technology Group LLC\",\r\n"
-				+ "    \"merchantId\": \"\"\r\n"
-				+ "}";
-
-		closeableHttpResponse = restclient.post(compliance, usersJsonString, headermap);
-
-//			//1.GET status code
-		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
-		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not ");
-
-//			//2.Json String
-		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-		JSONObject responseJson = new JSONObject(responsestring);
-		System.out.println("JSON response from API---->" + responseJson);
-
-		// To get value from JSON Array
-		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/successful");
-		System.out.println("Response From Json is : " + responseFromJson);
-//		    			
-//			//3.All Headers
-		Header[] headersArray = closeableHttpResponse.getAllHeaders();
-		HashMap<String, String> allHeaders = new HashMap<String, String>();
-
-		for (Header header : headersArray) {
-			allHeaders.put(header.getName(), header.getValue());
-
-		}
-		System.out.println("Headers Array-->" + allHeaders);
-
-	}
 	
-	@Test(priority = 14)
+	@Test(priority = 13)
 	public void Hacienda_corporate_authorize() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
 		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
@@ -732,13 +705,13 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("Authorization", "Basic " + encoding);
 		
 		String usersJsonString = "{\r\n"
-				+ "   \"idType\": \"2\",\r\n"
-				+ "   \"id\": \"660962981\",\r\n"
-				+ "   \"firstName\": \"\",\r\n"
-				+ "   \"lastName\": \"\",\r\n"
+				+ "   \"idType\": \"1\",\r\n"
+				+ "    \"id\": \"333224444\",\r\n"
+				+ "    \"firstName\": \"jon\",\r\n"
+				+ "    \"lastName\": \"doe\",\r\n"
 				+ "   \"secondLastName\": \"\",\r\n"
-				+ "   \"businessName\": \"Code Dog Technology Group LLC\",\r\n"
-				+ "   \"email\": \"dpolanco@prits.pr.gov\",\r\n"
+				+ "   \"businessName\":\"PRITS\",\r\n"
+				+ "   \"email\": \"orivera@prits.pr.gov\",\r\n"
 				+ "   \"agency\": \"PRITS\" \r\n"
 				+ "}";
 
@@ -769,8 +742,106 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		System.out.println("Headers Array-->" + allHeaders);
 
 	}
+	
+	@Test(priority = 14)
+	public void Hacienda_corporate_compliance() throws ClientProtocolException, IOException {
+		restclient = new RestClient();
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", "application/json");
+		headermap.put("Authorization", "Basic " + encoding);
+		
+		String usersJsonString = "{\r\n"
+				+ "    \"idType\": \"1\",\r\n"
+				+ "    \"id\": \"333224444\",\r\n"
+				+ "    \"firstName\": \"jon\",\r\n"
+				+ "    \"lastName\": \"doe\",\r\n"
+				+ "    \"secondLastName\": \"PRITS\",\r\n"
+				+ "    \"businessName\": \"PRITS\",\r\n"
+				+ "    \"merchantId\": \"\",\r\n"
+				+ "    \"requestorEmail\":\"orivera@prits.pr.gov\"\r\n"
+				+ "}";
 
+		closeableHttpResponse = restclient.post(compliance, usersJsonString, headermap);
+
+//			//1.GET status code
+		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
+		System.out.println("Status code:" + statuscode);
+		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not ");
+
+//			//2.Json String
+		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
+		JSONObject responseJson = new JSONObject(responsestring);
+		System.out.println("JSON response from API---->" + responseJson);
+
+		// To get value from JSON Array
+		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/successful");
+		System.out.println("Response From Json is : " + responseFromJson);
+//		    			
+//			//3.All Headers
+		Header[] headersArray = closeableHttpResponse.getAllHeaders();
+		HashMap<String, String> allHeaders = new HashMap<String, String>();
+
+		for (Header header : headersArray) {
+			allHeaders.put(header.getName(), header.getValue());
+
+		}
+		System.out.println("Headers Array-->" + allHeaders);
+
+	}
+	
+	
+	
+	
 	@Test(priority = 15)
+	public void Hacienda_Income() throws ClientProtocolException, IOException {
+		restclient = new RestClient();
+		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", "application/json");
+		headermap.put("Authorization", "Basic " + encoding);
+		
+		String usersJsonString = "{\r\n"
+				+ "   \"idType\":\"1\",\r\n"
+				+ "   \"id\":\"333224444\",\r\n"
+				+ "   \"firstName\":\"jon\",\r\n"
+				+ "   \"lastName\":\"doe\",\r\n"
+				+ "   \"secondLastName\":\"\",\r\n"
+				+ "   \"dateOfBirth\":\"1999-12-31\",\r\n"
+				+ "   \"businessName\":\"\",\r\n"
+				+ "   \"taxYear\":2018,\r\n"
+				+ "   \"requestorEmail\":\"orivera@prits.pr.gov\"\r\n"
+				+ "}";
+
+		closeableHttpResponse = restclient.post(Hacienda_income, usersJsonString, headermap);
+
+//			//1.GET status code
+		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
+		System.out.println("Status code:" + statuscode);
+		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
+
+//			//2.Json String
+		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
+		JSONObject responseJson = new JSONObject(responsestring);
+		System.out.println("JSON response from API---->" + responseJson);
+
+		// To get value from JSON Array
+		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/successful");
+		System.out.println("Response From Json is : " + responseFromJson);
+//		    			
+//			//3.All Headers
+		Header[] headersArray = closeableHttpResponse.getAllHeaders();
+		HashMap<String, String> allHeaders = new HashMap<String, String>();
+
+		for (Header header : headersArray) {
+			allHeaders.put(header.getName(), header.getValue());
+
+		}
+		System.out.println("Headers Array-->" + allHeaders);
+
+	}
+
+	@Test(priority = 16)
 	public void Hacienda_Corporate_complianceDocuments() throws ClientProtocolException, IOException {
 		restclient = new RestClient();
 		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
@@ -779,19 +850,19 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("Authorization", "Basic " + encoding);
 		
 		String usersJsonString = "{\r\n"
-				+ "    \"idType\": \"2\",\r\n"
-				+ "    \"id\": \"016825647\",\r\n"
-				+ "    \"firstName\": \"\",\r\n"
-				+ "    \"lastName\": \"\",\r\n"
+				+ "    \"idType\": \"1\",\r\n"
+				+ "    \"id\": \"333224444\",\r\n"
+				+ "    \"firstName\": \"jon\",\r\n"
+				+ "    \"lastName\": \"doe\",\r\n"
 				+ "    \"secondLastName\": \"\",\r\n"
-				+ "    \"businessName\": \"IBANEZ HELI-SKI\",\r\n"
+				+ "    \"businessName\": \"\",\r\n"
 				+ "    \"merchantId\": \"\",\r\n"
 				+ "    \"filingCertificate\": true,\r\n"
 				+ "    \"filingCertificateSUT\": true,\r\n"
 				+ "    \"debtCertificate\": true,\r\n"
 				+ "    \"merchantCertificate\": true,\r\n"
 				+ "    \"waiver\": true,\r\n"
-				+ "    \"requestorEmail\": \"testuser1\"\r\n"
+				+ "    \"requestorEmail\": \"orivera@prits.pr.gov\"\r\n"
 				+ "}";
 
 		closeableHttpResponse = restclient.post(complianceDocuments, usersJsonString, headermap);
@@ -822,187 +893,9 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 
 	}
 	
-	@Test(priority = 16)
-	public void Hacienda_individual_ping() throws ClientProtocolException, IOException {
 
-		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
-		HashMap<String, String> headermap = new HashMap<String, String>();
-		//headermap.put("content-type", "application/json");
-		headermap.put("Authorization", "Basic " + encoding);
-
-		closeableHttpResponse = restclient.get(ping_ind, headermap);
-
-		// 1.GET status code
-		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
-		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
-
-//		// 2.Json String
-//		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-//		JSONObject responseJson = new JSONObject(responsestring);
-//		System.out.println("JSON response from API---->" + responseJson);
-
-//		// To get value from JSON Array
-//		String Responsefromjson = TestUtil.getValueByjpath(responseJson, "/status");
-//		System.out.println("Resonse from json payload is: " + Responsefromjson);
-
-		// 3.All Headers
-		Header[] headersArray = closeableHttpResponse.getAllHeaders();
-		HashMap<String, String> allHeaders = new HashMap<String, String>();
-
-		for (Header header : headersArray) {
-			allHeaders.put(header.getName(), header.getValue());
-		}
-		System.out.println("Headers Array-->" + allHeaders);
-
-	}
 	
-	@Test(priority = 17)
-	public void Hacienda_compliance_individual() throws ClientProtocolException, IOException {
-		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
-		HashMap<String, String> headermap = new HashMap<String, String>();
-		headermap.put("Content-Type", "application/json");
-		headermap.put("Authorization", "Basic " + encoding);
 		
-		String usersJsonString = "{\r\n"
-				+ "   \"idType\": \"1\",\r\n"
-				+ "   \"id\": \"598408444\",\r\n"
-				+ "   \"firstName\": \"OSCAR\",\r\n"
-				+ "   \"lastName\": \"RIVERA\",\r\n"
-				+ "   \"secondLastName\": \"\",\r\n"
-				+ "   \"businessName\":\"\",\r\n"
-				+ "    \"merchantId\": \"05578230020\"\r\n"
-				+ "}";
-
-		closeableHttpResponse = restclient.post(compliance_ind, usersJsonString, headermap);
-
-//			//1.GET status code
-		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
-		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
-
-//			//2.Json String
-		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-		JSONObject responseJson = new JSONObject(responsestring);
-		System.out.println("JSON response from API---->" + responseJson);
-
-		// To get value from JSON Array
-		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/successful");
-		System.out.println("Response From Json is : " + responseFromJson);
-//		    			
-//			//3.All Headers
-		Header[] headersArray = closeableHttpResponse.getAllHeaders();
-		HashMap<String, String> allHeaders = new HashMap<String, String>();
-
-		for (Header header : headersArray) {
-			allHeaders.put(header.getName(), header.getValue());
-
-		}
-		System.out.println("Headers Array-->" + allHeaders);
-
-	}
-	
-	@Test(priority = 18)
-	public void Hacienda_authorize_individual() throws ClientProtocolException, IOException {
-		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
-		HashMap<String, String> headermap = new HashMap<String, String>();
-		headermap.put("Content-Type", "application/json");
-		headermap.put("Authorization", "Basic " + encoding);
-		
-		String usersJsonString = "{\r\n"
-				+ "   \"idType\": \"1\",\r\n"
-				+ "   \"id\": \"598408444\",\r\n"
-				+ "   \"firstName\": \"OSCAR\",\r\n"
-				+ "   \"lastName\": \"RIVERA\",\r\n"
-				+ "   \"secondLastName\": \"\",\r\n"
-				+ "   \"businessName\":\"\",\r\n"
-				+ "   \"email\": \"dpolanco@prits.pr.gov\",\r\n"
-				+ "   \"agency\": \"PRITS\" \r\n"
-				+ "}";
-
-		closeableHttpResponse = restclient.post(authorize_ind, usersJsonString, headermap);
-
-//			//1.GET status code
-		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
-		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
-
-//			//2.Json String
-		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-		JSONObject responseJson = new JSONObject(responsestring);
-		System.out.println("JSON response from API---->" + responseJson);
-
-		// To get value from JSON Array
-		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/Successful");
-		System.out.println("Response From Json is : " + responseFromJson);
-//		    			
-//			//3.All Headers
-		Header[] headersArray = closeableHttpResponse.getAllHeaders();
-		HashMap<String, String> allHeaders = new HashMap<String, String>();
-
-		for (Header header : headersArray) {
-			allHeaders.put(header.getName(), header.getValue());
-
-		}
-		System.out.println("Headers Array-->" + allHeaders);
-
-	}
-	
-	@Test(priority = 19)
-	public void Hacienda_complianceDocuments_ind() throws ClientProtocolException, IOException {
-		restclient = new RestClient();
-		String encoding = Base64.getEncoder().encodeToString(("prits_prod:&x(De$Ar!d3F]1w").getBytes());
-		HashMap<String, String> headermap = new HashMap<String, String>();
-		headermap.put("Content-Type", "application/json");
-		headermap.put("Authorization", "Basic " + encoding);
-		
-		String usersJsonString = "{\r\n"
-				+ "    \"idType\": \"1\",\r\n"
-				+ "    \"id\": \"598408444\",\r\n"
-				+ "    \"firstName\": \"oscar\",\r\n"
-				+ "    \"lastName\": \"rivera\",\r\n"
-				+ "    \"secondLastName\": \"\",\r\n"
-				+ "    \"businessName\": \"\",\r\n"
-				+ "    \"merchantId\": \"\",\r\n"
-				+ "    \"filingCertificate\": true,\r\n"
-				+ "    \"filingCertificateSUT\": true,\r\n"
-				+ "    \"debtCertificate\": true,\r\n"
-				+ "    \"merchantCertificate\": true,\r\n"
-				+ "    \"waiver\": true,\r\n"
-				+ "    \"requestorEmail\": \"dpolanco@prits.pr.gov\"\r\n"
-				+ "}";
-
-		closeableHttpResponse = restclient.post(complianceDocuments_ind, usersJsonString, headermap);
-
-//			//1.GET status code
-		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
-		System.out.println("Status code:" + statuscode);
-		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
-
-//			//2.Json String
-		String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
-		JSONObject responseJson = new JSONObject(responsestring);
-		System.out.println("JSON response from API---->" + responseJson);
-
-		// To get value from JSON Array
-		String responseFromJson = TestUtil.getValueByjpath(responseJson, "/successful");
-		System.out.println("Response From Json is : " + responseFromJson);
-//		    			
-//			//3.All Headers
-		Header[] headersArray = closeableHttpResponse.getAllHeaders();
-		HashMap<String, String> allHeaders = new HashMap<String, String>();
-
-		for (Header header : headersArray) {
-			allHeaders.put(header.getName(), header.getValue());
-
-		}
-		System.out.println("Headers Array-->" + allHeaders);
-
-	}
-	
 	@Test(priority = 20)
 	public void PostAPITest_cap_request() throws ClientProtocolException, IOException {
 
@@ -1165,14 +1058,21 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		headermap.put("content-type", "application/json");
 		headermap.put("Authorization", "Basic " + encoding);
 		System.out.println("closeableHttpResponse:" + restclient);
+		
+		String usersJsonString = "{\r\n"
+				+ "    \"ssn\": \"333224444\"\r\n"
+				+ "}";
 
-		closeableHttpResponse = restclient.get(Justicia_CriminalRecord, headermap);
-		System.out.println("closeableHttpResponse:" + closeableHttpResponse);
+		closeableHttpResponse = restclient.post(Justicia_CriminalRecord, usersJsonString, headermap);
+
 
 		// 1.GET status code
 		int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 		System.out.println("Status code:" + statuscode);
 		Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
+		
+		
+		
 
 		
 
@@ -1432,9 +1332,10 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		  //params.add(new BasicNameValuePair("client_id", "OGP20180821&*990899XX"));
 		  //params.add(new BasicNameValuePair("client_secret", "5&t%$xZHpr9800"));
 //		  formData.add(new BasicNameValuePair("grant_type", "client_credentials"));
-		 formData.add(new BasicNameValuePair("scope", "roles"));
-		 formData.add(new BasicNameValuePair("Client_ID", "app1"));
-		 formData.add(new BasicNameValuePair("Client_Secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
+		  formData.add(new BasicNameValuePair("Grant Type", "Client Credentials"));
+		 formData.add(new BasicNameValuePair("Scope", "roles"));
+		 formData.add(new BasicNameValuePair("Client ID", "app1"));
+		 formData.add(new BasicNameValuePair("Client Secret", "2d8fa992-09b1-4795-bf31-ef60de70abe7"));
 		 formData.add(new BasicNameValuePair("Client Authentication", "Send as Basic Auth header"));
 //		 formData.add(new BasicNameValuePair("CLIENT_AUTHENTICATION", "Send client credentials in body"));
 		  // add to request
@@ -1444,8 +1345,8 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		      System.out.println(httppost);
 		  httppost.setEntity(new UrlEncodedFormEntity(formData)); //for payload
 		 CloseableHttpResponse closeableHttpResponse = httpclient.execute(httppost);
-		  
-
+		 
+	
 
 		 // //1.GET status code
 		 int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
