@@ -406,7 +406,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	//1.GET status code
 	int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 	System.out.println("Status code:" +statuscode);
-	Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_500, "status code is not 200");
+	Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
 
 	//2.Json String
 	String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
@@ -414,7 +414,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	JSONObject responseJson = new JSONObject(responsestring);
 	System.out.println("JSON response from API---->" +responseJson);
 	String s = TestUtil.getValueByjpath(responseJson, "/success");
-	String expected = "false";
+	String expected = "true";
 	Assert.assertEquals(s, expected);
 
 	//To get value from JSON Array
@@ -444,7 +444,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	//1.GET status code
 	int statuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 	System.out.println("Status code:" +statuscode);
-	Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_500, "status code is not 200");
+	Assert.assertEquals(statuscode, RESPONSE_STATUS_CODE_200, "status code is not 200");
 
 	//2.Json String
 	String responsestring = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
@@ -452,7 +452,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	JSONObject responseJson = new JSONObject(responsestring);
 	System.out.println("JSON response from API---->" +responseJson);
 	String s = TestUtil.getValueByjpath(responseJson, "/success");
-	String expected = "false";
+	String expected = "true";
 	Assert.assertEquals(s, expected);
 
 	//To get value from JSON Array
