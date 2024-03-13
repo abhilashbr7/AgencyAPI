@@ -57,7 +57,7 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 	String Token,Fondo_Token, citizen_referenceId, corporate_referenceId,get_token,DTOP_tocken;
 	String api_test_token,justicia_url,caprequest,Retrieve,Validate;
 	String Patrono_Certificate,CFSE_serviceurl,api_CFSEtest_toke,InformationDDeuda,CertificateDDeuda,CertificateDVegencia,FondoPing,Compliance,EstadoPing,Certificado,api_CFSEtest_token;
-	String Individuo_Certificate,Hacienda_income,serviceurl_hacienda,ping,compliance,authorize,complianceDocuments,serviceurl_Ind_hacienda,ping_ind,compliance_ind,authorize_ind,complianceDocuments_ind;
+	String Individuo_Certificate,Hacienda_income,serviceurl_hacienda,ping,compliance,authorize,complianceDocuments,CFSE,serviceurl_Ind_hacienda,ping_ind,compliance_ind,authorize_ind,complianceDocuments_ind;
 	String crimurl,crimauthenticate,crimcertificate,crimcompliance,crimfilecontent,FileContentId,FileContent,DTOP_License,Prod_Justicia_CriminalRecord,Justicia_CriminalRecord;
 	CloseableHttpResponse closeableHttpResponse;
 	
@@ -107,15 +107,16 @@ public class AgencyAPI_Prod extends TestBase implements IExecutionListener {
 		Patrono_Certificate = serviceurl + Patrono_Certificate;
 		CFSE_serviceurl = prop.getProperty("Prod_URL3");
 		api_CFSEtest_token = prop.getProperty("Prod_api_CFSEtest_token");
-		api_CFSEtest_token = CFSE_serviceurl + api_CFSEtest_token;
+		CFSE = prop.getProperty("CFSE");
+		api_CFSEtest_token = CFSE + api_CFSEtest_token;
 		InformationDDeuda = prop.getProperty("Prod_InformationDDeuda");
-		InformationDDeuda = CFSE_serviceurl + InformationDDeuda;
+		InformationDDeuda = CFSE + InformationDDeuda;
 		CertificateDDeuda = prop.getProperty("Prod_CertificateDDeuda");
-		CertificateDDeuda = CFSE_serviceurl + CertificateDDeuda;
+		CertificateDDeuda = CFSE + CertificateDDeuda;
 		CertificateDVegencia = prop.getProperty("Prod_CertificateDVegencia");
-		CertificateDVegencia = CFSE_serviceurl + CertificateDVegencia;
+		CertificateDVegencia = CFSE + CertificateDVegencia;
 		FondoPing = prop.getProperty("Prod_FondoPing");
-		FondoPing = CFSE_serviceurl + FondoPing;
+		FondoPing = CFSE + FondoPing;
 		serviceurl = prop.getProperty("Prod_URL4");
 		Compliance = prop.getProperty("Prod_Compliance");
 		Compliance = serviceurl + Compliance;
